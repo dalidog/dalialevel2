@@ -3,13 +3,14 @@ package dalialevel2;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class Rocketship extends GameObject{
+public class Rocketship extends GameObject{ 
 	int speed;
 	static boolean up;
 	static boolean down;
 	static boolean right;
 	static boolean left;
 	public Rocketship(int width, int height, int x, int y, int speed) {
+		super();
 		this.width = width;
 		this.height = height;
 		this.x=x;
@@ -18,6 +19,7 @@ public class Rocketship extends GameObject{
 	}
 
 	void update(){
+		super.update();
 		if(up == true){
 			y=y-speed;
 		}
@@ -32,8 +34,6 @@ public class Rocketship extends GameObject{
 		}
 	}
 	void draw(Graphics g){
-		g.setColor(Color.CYAN);
-		
-		g.fillRect(x, y, width, height);
+		g.drawImage(GamePanel.rocketImg, x, y, width, height, null);
 	}
 }
